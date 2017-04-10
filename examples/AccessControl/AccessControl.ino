@@ -163,7 +163,11 @@ void setup() {
     bool buttonState = monitorWipeButton(10000); // Give user enough time to cancel operation
     if (buttonState == true && digitalRead(wipeB) == LOW) {    // If button still be pressed, wipe EEPROM
       Serial.println(F("Starting Wiping EEPROM"));
+<<<<<<< HEAD
       for (uint16_t x = 0; x < EEPROMLength(); x = x + 1) {    //Loop end of EEPROM address
+=======
+      for (uint16_t x = 0; x < EEPROM.length(); x = x + 1) {    //Loop end of EEPROM address
+>>>>>>> master
         if (EEPROM.read(x) == 0) {              //If EEPROM address 0
           // do nothing, already clear, go to the next address in order to save time and reduce writes to EEPROM
         }
@@ -568,6 +572,7 @@ bool monitorWipeButton(uint32_t interval) {
   }
   return true;
 }
+<<<<<<< HEAD
 
 size_t EEPROMLength()
 {
@@ -581,3 +586,5 @@ size_t EEPROMLength()
   return eepromLength;
 }
 
+=======
+>>>>>>> master
